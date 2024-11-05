@@ -14,6 +14,7 @@ function App() {
         <ul>SEARCH</ul>
         <ul>PROFILE</ul>
         <ul>FAVORITES</ul>
+        <ul>HOME</ul>
       </nav>
       <Search></Search>
     </>
