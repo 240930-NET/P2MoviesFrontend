@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import './Search.css'
+import './SearchBar.css'
 
-function Search(){
+function SearchBar(){
     function handleSearch(e) {
         e.preventDefault();
 
@@ -23,4 +23,4 @@ function Search(){
     )
 }
 
-export default Search;
+export default SearchBar;

@@ -1,23 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Search from './Search.jsx'
+import Navbar from "./Components/Navbar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Search from "./Pages/Search";
+import SearchResult from "./Pages/SearchResults";
+import WatchList from "./Pages/WatchList";
+import WatchedList from "./Pages/watchedList";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Your favorite movie's!</h1>
-      <nav>
-        <ul>SEARCH</ul>
-        <ul>PROFILE</ul>
-        <ul>FAVORITES</ul>
-        <ul>HOME</ul>
-      </nav>
-      <Search></Search>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+          <Route exact path="/" element={<Search />} />
+          <Route path="/search-result" element={<SearchResult />} />
+          <Route path="/watch-list" element={<WatchList />}/>
+          <Route path="/watched-list" element={<WatchedList />} />
+      </Routes>
+  </Router>
   )
 }
 
