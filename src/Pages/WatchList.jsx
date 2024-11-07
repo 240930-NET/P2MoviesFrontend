@@ -1,14 +1,10 @@
-import MovieDisplay from "../Components/MovieDisplay"
+import WatchMovieList from "../Components/WatchMovieList"
 
 function WatchList() {
     return(
         <>
-            <h1>Movies i want to watch</h1>
-            <ul>
-                <MovieDisplay/>
-                <MovieDisplay/>
-                <MovieDisplay/>
-            </ul>
+            <h1>Movies I want to Watch</h1>
+            <WatchMovieList/>
         </>
     );
 }

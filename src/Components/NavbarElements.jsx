@@ -26,7 +26,7 @@ export const NavLink = styled(Link)`
     &.active {
         color: #fff0e6;
     }
-    &.selection {
+    &.hover {
         color: #99e6ff;
     }
 `;

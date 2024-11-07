@@ -13,10 +13,10 @@ function SearchBar(){
 
     return (
         <div>
-            <label>
+            <label className='searchBar'>
                 <form method="post" onSubmit={handleSearch}>
                     Search: <input name='Search' defaultValue={'Howl\'s moving castle'}/>
-                    <button type='submit'>Submit</button>
+                    <button type='submit' to="/search-result">Submit</button>
                 </form>
             </label>
         </div>
