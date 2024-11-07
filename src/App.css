@@ -9,3 +9,7 @@
 .centerBar {
   justify-content: center;
 }
+
+html body {
+    background-color: rgba(61, 61, 61, 1);
+}

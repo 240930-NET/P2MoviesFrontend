@@ -3,6 +3,7 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { getConfig } from "../config";
 import Loading from "../Components/Loading";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function WatchedList() {
     
@@ -36,7 +37,8 @@ function WatchedList() {
                 },
                 });
                 const data = await response.json();
-                setData(data);
+                console.log(data);
+                setMovies(data);
             } catch (error) {
                 console.error('Error getting token or calling API:', error);
             }
@@ -45,12 +47,20 @@ function WatchedList() {
     }, [getAccessTokenSilently]);
 
     return(
-        <div>
-            {data.map((item, index) => (
-                <div key={index}>
-                    {<img src={item.PosterLink} alt="Poster" />}
-                    {item.Title} 
-                </div>
+        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${3}, 1fr)` }}>
+            {movies.map((item, index) => (
+                <Link 
+                    key={index} 
+                    to={{
+                        pathname: `/movie/${item.title}&${item.releaseYear}`,  // Adjust route as necessary
+                        state: { item }
+                    }} 
+                >
+                    {<img src={item.posterLink} alt="Poster" />}
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        {item.title}
+                    </div>  
+                </Link>
             ))}
         </div>
     );
@@ -59,3 +69,5 @@ function WatchedList() {
 export default withAuthenticationRequired(WatchedList, {
     onRedirecting: () => <Loading />,
   });
+
+  //<Link to={{ pathname: `/movie`, state: { [item.title, item.year] }}></Link>    

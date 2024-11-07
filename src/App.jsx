@@ -13,6 +13,7 @@ import Search from "./Pages/Search";
 import SearchResult from "./Pages/SearchResults";
 import WatchList from "./Pages/WatchList";
 import WatchedList from "./Pages/watchedList";
+import MovieDetails from "./Pages/MovieDetails"
 
 import './App.css'
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/search-result" element={<SearchResult />} />
           <Route path="/watchlist" element={<WatchList />}/>
           <Route path="/watched-movies" element={<WatchedList />} />
+          <Route path="/movie/:title&:releaseYear" element={<MovieDetails />} />
         </Routes>
       </Container>
   </Router>
