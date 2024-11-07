@@ -1,12 +1,13 @@
 import SearchBar from '../Components/SearchBar';
 import React, { Fragment } from "react";
+import { Container } from 'reactstrap';
 
 function Search() {
     return(
-        <Fragment>
+        <Container>
             <h1>MOVIES WATCHERS PLANNER</h1>
-            <SearchBar></SearchBar>
-        </Fragment>
+            <SearchBar className="centerBar"></SearchBar>
+        </Container>
     );
 }
 
