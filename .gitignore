@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 #other files
-auth-config.json
+auth_config.json
