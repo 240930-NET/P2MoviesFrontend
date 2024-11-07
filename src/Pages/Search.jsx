@@ -3,7 +3,7 @@ import SearchBar from '../Components/SearchBar';
 function Search() {
     return(
         <>
-            <h1>MOVIES WATCHERS PLANNER</h1>
+            <h1>MOVIE WATCHERS PLANNER</h1>
             <SearchBar></SearchBar>
         </>
     );
