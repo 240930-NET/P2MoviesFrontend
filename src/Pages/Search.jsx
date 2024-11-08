@@ -5,7 +5,6 @@ import { Container } from 'reactstrap';
 function Search() {
     return(
         <Container>
-            <h1>MOVIES WATCHERS PLANNER</h1>
             <SearchBar className="centerBar"></SearchBar>
         </Container>
     );

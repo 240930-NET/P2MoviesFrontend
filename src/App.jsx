@@ -36,7 +36,7 @@ function App() {
       <Container className="mainContainer" >
         <Routes>
           <Route exact path="/" element={<Search />} />
-          <Route path="/search-result" element={<SearchResult />} />
+          <Route path="/search-result/:title/:page" element={<SearchResult />} />
           <Route path="/watchlist" element={<WatchList />}/>
           <Route path="/watched-movies" element={<WatchedList />} />
           <Route path="/movie/:title/:releaseYear" element={<MovieDetails />} />

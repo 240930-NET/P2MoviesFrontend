@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 import './MovieDisplay.css';
 
 function MovieDisplay() {
@@ -41,4 +41,4 @@ function MovieDisplay() {
 
 }
 
-export default MovieDisplay;
+export default MovieDisplay;*/

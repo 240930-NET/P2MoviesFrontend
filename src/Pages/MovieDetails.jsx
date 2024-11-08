@@ -1,4 +1,4 @@
-import { useLocation, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import { getConfig } from "../config";
 import { Container, Row, Col, Button } from 'reactstrap';
@@ -7,7 +7,6 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 
 function MovieDetails() {
-    const location = useLocation();
     const [movie, setMovie] = useState([]);
     const { title, releaseYear } = useParams(); // Extract URL params
     const { 
@@ -32,9 +31,11 @@ function MovieDetails() {
     const toggleChecked1 = async () => {
         const sendData = {
             title: `${title}`,
-            releaseYear: parseInt(releaseYear),
+            releaseYear: parseInt(releaseYear.substring(0, 4)),
             posterLink: `${movie.Poster}`
         };
+        console.log(releaseYear);
+        console.log(sendData);
         if(checked1) {
             try {
                 // Get the access token from Auth0
@@ -82,7 +83,8 @@ function MovieDetails() {
     const toggleChecked2 = async () => {
         const sendData = {
             title: `${title}`,
-            releaseYear: parseInt(releaseYear),
+            releaseYear: parseInt(releaseYear.substring(0, 4)),
+            posterLink: `${movie.Poster}`
           };
         if(checked2) {
             try {
@@ -152,7 +154,7 @@ function MovieDetails() {
                 });
 
                 // Make your authorized API call
-                const response = await fetch(`${apiOrigin}/api/User/checkMovieInWatchlist/${title}/${releaseYear}`, {
+                const response = await fetch(`${apiOrigin}/api/User/checkMovieInWatchlist/${title}/${parseInt(releaseYear.substring(0, 4))}`, {
                     method: 'GET', 
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -173,7 +175,7 @@ function MovieDetails() {
                 });
 
                 // Make your authorized API call
-                const response = await fetch(`${apiOrigin}/api/User/checkMovieInWatchedMovie/${title}/${releaseYear}`, {
+                const response = await fetch(`${apiOrigin}/api/User/checkMovieInWatchedMovie/${title}/${parseInt(releaseYear.substring(0, 4))}`, {
                     method: 'GET', 
                     headers: {
                         Authorization: `Bearer ${token}`,
