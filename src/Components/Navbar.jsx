@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Navbar.css";
 
 //import { Nav, NavLink, NavMenu } from "./NavbarElements.jsx";
 //import { NavMenu } from "./NavbarElements.jsx";
@@ -56,7 +57,7 @@ const NavBar = () => {
                                 Search
                             </NavLink>
                         </NavItem>
-                        {isAuthenticated && (
+                        {!isAuthenticated && (
                         <NavItem>
                             <NavLink
                             tag={RouterNavLink}
@@ -67,7 +68,7 @@ const NavBar = () => {
                             </NavLink>
                         </NavItem>
                         )}
-                        {isAuthenticated && (
+                        {!isAuthenticated && (
                         <NavItem>
                             <NavLink
                             tag={RouterNavLink}

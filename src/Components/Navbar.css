@@ -1,0 +1,53 @@
+.navbar {
+    background-color: #ffc107; 
+    padding: 0.5rem 1rem;
+  }
+  
+  /* NavLink Font Style */
+  .navbar-nav .nav-link {
+    color: white !important; 
+    font-weight: bold; 
+    transition: color 0.3s ease;
+  }
+  
+  /* NavLink hover  */
+  .navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    text-decoration: underline;
+  }
+  
+  /* Button Style */
+  #qsLoginBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  #qsLoginBtn:hover {
+    background-color: #0056b3;
+  }
+  
+    .nav-user-profile {
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-user-profile:hover {
+    transform: scale(1.1); 
+  }
+  
+  /* login / logout  */
+  .navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .navbar-nav .nav-item {
+    margin-left: 20px; 
+  }
+  
+  .btn-margin {
+    margin-right: 20px; 
+  }
+  

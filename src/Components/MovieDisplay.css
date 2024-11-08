@@ -1,0 +1,33 @@
+.moviePreview {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .moviePreview img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .moviePreview:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .rating {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+  }
