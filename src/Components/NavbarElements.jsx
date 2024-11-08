@@ -1,4 +1,4 @@
-import { NavLink as Link } from "react-router-dom";
+/*import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 
@@ -39,4 +39,4 @@ export const NavMenu = styled.div`
     margin-right: 100px;
     width: 100vw;
     white-space: nowrap; 
-`;
+`;*/

@@ -1,0 +1,29 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$body-bg: #000;
+$body-color: #111;
+
+$primary: #f3591c;
+$secondary: rgb(33, 255, 236);
+$danger: #ff4136;
+Navbar{background-color:#f3591c}
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger
+);
+
+$custom-colors: (
+  "custom-color": #f3591c
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
