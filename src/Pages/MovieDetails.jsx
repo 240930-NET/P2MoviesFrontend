@@ -23,7 +23,7 @@ function MovieDetails() {
         error: null,
     });
 
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently, isAuthenticated} = useAuth0();
 
     const [checked1, setChecked1] = useState(false);
     const [checked2, setChecked2] = useState(false);
@@ -193,6 +193,7 @@ function MovieDetails() {
 
   return (
     <Container style={{marginTop: '20px', color: 'lightgrey'}}>
+        {isAuthenticated && (
         <Row className="justify-content-end">
             <Col className="d-flex justify-content-end">
                 <Button
@@ -208,7 +209,7 @@ function MovieDetails() {
                     {checked2 ? "Remove From Watched Movies" : "Add to Watched Movies"} 
                 </Button>
             </Col>
-        </Row>
+        </Row>)}
         <Row>
             <Col xs="auto">{<img src={movie.Poster} alt="Poster" />}</Col>
             <Col className="flex-grow-1" >
