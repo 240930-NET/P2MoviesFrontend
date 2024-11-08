@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './SearchBar.css'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 function SearchBar(){
     //const history = useHistory();
     const [movieTitle, setMovieTitle] = useState('Howl\'s moving castle')
     const [movieData, setMovieData] = useState(undefined)
     const [moviePoster, setMoviePoster] = useState(undefined)
+    const navigate = useNavigate();
 
     function handleSearch(e) {
         e.preventDefault();
@@ -55,6 +56,7 @@ function SearchBar(){
                 console.log(err);
             })
 
+            navigate("/search-result/${movieTitle}", {state:{title:movieTitle}});
             //history.push({pathname: "/search-result", state: [movieData, moviePoster]});
         }
     }
