@@ -80,6 +80,7 @@ function SearchResults() {
 
     return(
         <div>
+            <SearchBar />
             <div style={{ display: 'grid', gridTemplateColumns: `repeat(${3}, 1fr)`, marginTop: '20px'}}>
                 {movies.map((movie, index) => (
                     <Link 

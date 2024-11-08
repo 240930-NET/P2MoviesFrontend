@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './SearchBar.css'
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Container } from 'reactstrap';
 
 function SearchBar(){
     //const history = useHistory();
@@ -13,7 +14,10 @@ function SearchBar(){
       };
 
     return (
-        <div>
+        <Container 
+            fluid 
+            className="d-flex justify-content-center align-items-center"
+            >
             <label className='searchBar'>
                 <form method="post">
                     Search: <input name='Search' value={movieTitle} 
@@ -28,7 +32,7 @@ function SearchBar(){
                     
                 </form>
             </label>
-        </div>
+        </Container>
     )
 }
 
