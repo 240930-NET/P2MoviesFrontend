@@ -33,7 +33,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Container className="centerContainer">
+      <Container className="mainContainer" >
         <Routes>
           <Route exact path="/" element={<Search />} />
           <Route path="/search-result" element={<SearchResult />} />
