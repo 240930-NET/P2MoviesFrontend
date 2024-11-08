@@ -16,11 +16,31 @@ function SearchResults() {
         ombdKey 
     } = getConfig();
 
-    const resetMovies = async () => {
+    const resetMoviesUp = async () => {
         const getMovies = async () => {
             try {
                 // Make your authorized API call
-                const response = await fetch(`${movieApiOrigin}?s='${title}'&page=${page}&apikey=${ombdKey}`, {
+                const response = await fetch(`${movieApiOrigin}?s='${title}'&page=${+page+1}&apikey=${ombdKey}`, {
+                method: 'GET', 
+                headers: {
+                    Accept: 'application/json',
+                },
+                });
+                const data = await response.json();
+                console.log(data);
+                setMovies(data.Search);
+            } catch (error) {
+                console.error('Error calling API:', error);
+            }
+        };
+        getMovies();
+    }
+
+    const resetMoviesDown = async () => {
+        const getMovies = async () => {
+            try {
+                // Make your authorized API call
+                const response = await fetch(`${movieApiOrigin}?s='${title}'&page=${page-1}&apikey=${ombdKey}`, {
                 method: 'GET', 
                 headers: {
                     Accept: 'application/json',
@@ -84,7 +104,7 @@ function SearchResults() {
                                 pathname: `/search-result/${title}/${page-1}`,  // Adjust route as necessary
                             }} 
                         >
-                            <button onClick={resetMovies}>{page - 1}</button>
+                            <button onClick={resetMoviesDown}>{page - 1}</button>
                         </Link>
                     )}
                 </Col>
@@ -95,7 +115,7 @@ function SearchResults() {
                             pathname: `/search-result/${title}/${+page + 1}`,  // Adjust route as necessary
                         }} 
                     >
-                        <button onClick={resetMovies}>{+page + 1}</button>
+                        <button onClick={resetMoviesUp}>{+page + 1}</button>
                     </Link>
                     )}
                 </Col>
