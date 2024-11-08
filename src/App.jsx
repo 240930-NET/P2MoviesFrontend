@@ -39,7 +39,7 @@ function App() {
           <Route path="/search-result" element={<SearchResult />} />
           <Route path="/watchlist" element={<WatchList />}/>
           <Route path="/watched-movies" element={<WatchedList />} />
-          <Route path="/movie/:title&:releaseYear" element={<MovieDetails />} />
+          <Route path="/movie/:title/:releaseYear" element={<MovieDetails />} />
         </Routes>
       </Container>
   </Router>

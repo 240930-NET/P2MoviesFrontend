@@ -37,7 +37,6 @@ function WatchedList() {
                 },
                 });
                 const data = await response.json();
-                console.log(data);
                 setMovies(data);
             } catch (error) {
                 console.error('Error getting token or calling API:', error);
@@ -52,8 +51,7 @@ function WatchedList() {
                 <Link 
                     key={index} 
                     to={{
-                        pathname: `/movie/${item.title}&${item.releaseYear}`,  // Adjust route as necessary
-                        state: { item }
+                        pathname: `/movie/${item.title}/${item.releaseYear}`,  // Adjust route as necessary
                     }} 
                 >
                     {<img src={item.posterLink} alt="Poster" />}
@@ -70,4 +68,4 @@ export default withAuthenticationRequired(WatchedList, {
     onRedirecting: () => <Loading />,
   });
 
-  //<Link to={{ pathname: `/movie`, state: { [item.title, item.year] }}></Link>    
+
