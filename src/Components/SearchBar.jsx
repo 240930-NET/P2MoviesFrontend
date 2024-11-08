@@ -17,6 +17,7 @@ function SearchBar(){
         <Container 
             fluid 
             className="d-flex justify-content-center align-items-center"
+            style={{marginTop: '20px' }}
             >
             <label className='searchBar'>
                 <form method="post">

@@ -27,7 +27,6 @@ function SearchResults() {
                 },
                 });
                 const data = await response.json();
-                console.log(data);
                 setMovies(data.Search);
             } catch (error) {
                 console.error('Error calling API:', error);
@@ -47,7 +46,6 @@ function SearchResults() {
                 },
                 });
                 const data = await response.json();
-                console.log(data);
                 setMovies(data.Search);
             } catch (error) {
                 console.error('Error calling API:', error);
@@ -67,7 +65,6 @@ function SearchResults() {
                 },
                 });
                 const data = await response.json();
-                console.log(data);
                 setMovies(data.Search);
             } catch (error) {
                 console.error('Error calling API:', error);
@@ -80,7 +77,7 @@ function SearchResults() {
 
     return(
         <div>
-            <SearchBar />
+            <SearchBar/>
             <div style={{ display: 'grid', gridTemplateColumns: `repeat(${3}, 1fr)`, marginTop: '20px'}}>
                 {movies.map((movie, index) => (
                     <Link 
